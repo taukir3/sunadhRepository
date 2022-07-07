@@ -1,16 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git Tutorial</title>
-</head>
-<body>
-    <h2>git tutorial1</h2>
-    <h2>git tutorial2</h2>
-    <h2>git tutorial3</h2>
-    <h2>git tutorial4</h2>
-    <button>clock here</button>
-</body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .block {
+        background-color: yellow;
+        text-align: center;
+      }
+      .img_block{
+        width: 200px;
+        height: 300px;
+      }
+      .img_block img{
+        width: 95%;
+        margin: 0 auto;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="block" id="block">
+      <p>git tutorial1</p>
+      <div class="img_block">
+        <img src="images/mahndra.png" alt="image" id="img" />
+      </div>
+      <button id="btn">change image</button>
+    </div>
+    
+    <script>
+        const myImg=
+            {im1:'images/css.png',
+             im2:'images/mahndra.png'   
+            }
+
+        
+        const img = document.getElementById('img')
+        const btn = document.getElementById('btn')
+        const div=document.getElementById('block')
+        const para=div.getElementsByTagName('p')
+        btn.addEventListener('click',()=>{
+            para.innerHTML='image changed..'
+            if(img.src.match(myImg.im1))
+            {
+                img.src=myImg.im2
+            }else{
+                img.src=myImg.im1
+            }
+        });
+
+
+    </script>
+  </body>
 </html>
